@@ -1,0 +1,45 @@
+Title CCM API Sequence
+
+Client->APIController: http
+APIController->APIRequest: getHeader
+note right of APIRequest: Create xxHeader object
+APIRequest->-APIController: xxAPIHeader
+
+APIController->APIRequest: getRequest
+note right of APIRequest: also validates xxRequest object
+APIRequest->-APIController: xxRequest
+
+APIController->APIController: validateHeader
+APIController->APIList: getAPI
+APIList->-APIController: xxAPIList
+
+opt xxAPIList.getAuth()
+    APIController->APIController: getAuthInfo
+end
+
+APIController->APIList: getService
+APIList->-APIController: Service Class Name
+
+APIController->xxAPIService: execute
+
+xxAPIService->xxController: http 
+
+alt Scenario 1
+    xxController->xxService: xxMethod
+    xxService->xxRepository: xxMethod
+
+    xxRepository->-xxService: xxVO
+    xxService->-xxController: xxVO
+
+else Scenario 2
+    xxController->xxController(CCS): http 
+    xxController(CCS)->-xxController: http JSON response
+
+end
+
+xxController->-xxAPIService: http JSON response
+
+xxAPIService->-APIController: http JSON response
+
+
+APIController->-Client: http JSON response
