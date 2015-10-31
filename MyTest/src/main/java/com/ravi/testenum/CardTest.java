@@ -45,6 +45,7 @@ public class CardTest {
       CardDeck deck = new CardDeck();
       deck.print();
       deck.shuffle();
+      System.out.println("\n\n\n");
       deck.print();
    }
 }
