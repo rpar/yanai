@@ -13,7 +13,7 @@ enum Planets implements Named {
     public static void main(String[] args) {
 		for(Planets p : values())
 		{
-			System.out.println(p.order() + "-" + p.name());
+			System.out.println(" " + p.order() + "-" + p.name() + "" );
 		}
 		
 	}
