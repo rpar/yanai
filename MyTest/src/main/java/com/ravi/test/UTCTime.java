@@ -1,6 +1,5 @@
 package com.ravi.test;
 
-import java.io.ObjectInputStream.GetField;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -9,8 +8,15 @@ import java.util.TimeZone;
 public class UTCTime {
 
 	public static void main(String[] s) throws Exception {
-		String utc = "20151113001625";
-		int offset = -7;
+		
+		//testUTC();
+		
+		testDate();
+	}
+	public static void testUTC() throws Exception {
+
+		String utc = "20151113083000";
+		int offset = 1;
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddhhmmss");
 		TimeZone timeZone = TimeZone.getTimeZone("GMT");
@@ -18,7 +24,7 @@ public class UTCTime {
 		dateFormat.setTimeZone(timeZone);
 		Date parsedDate = dateFormat.parse(utc);
 		
-		System.out.println(parsedDate);
+		System.out.println("Time=>" + parsedDate);
 		
 		getMilliSecond(parsedDate.getTime());
 	}
@@ -36,14 +42,23 @@ public class UTCTime {
 
 		System.out.println(new Date(timeStamp));
 
-		timeStamp = 1447375621L * 1000 ;
+		timeStamp = 1447403399L * 1000 ;
 		calendar.setTimeInMillis(timeStamp);
 		System.err.println(new Date(timeStamp));
 		
 	}
+	
+	
+	public static void testDate() throws Exception {
+		
+		SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		
+		Long timestamp = 1447404228L * 1000;
+		
+		System.out.println(df.format(new Date(timestamp) ) );
+	}	
+	
+	
 }
 
 
-
-
-// Calendar.getInstance().getTimeInMillis()
