@@ -1,19 +1,20 @@
 package com.ravi.test;
 
-import java.util.Calendar;
+public class Test {
 
-public class Test
-{
-
-	public static void main(String[] s)
-	{
-		System.out.println("Test==>" + java.util.Calendar.getInstance().getTimeInMillis());
-		
-		long timeStamp = 1443026553908L;
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTimeInMillis(timeStamp);
-		System.out.println(calendar);
+	public static void main(String[] args) {
+		regularExpression();
 	}
-}
 
-//Calendar.getInstance().getTimeInMillis()
+	private static void regularExpression() {
+		// Regular Expression
+		String errMsg = "M0100 TEST 8G989f8";
+		String errorCodeStr = errMsg.replaceAll("[^0-9]", "").trim();
+
+		System.out.println(errorCodeStr);
+		errorCodeStr = errMsg.replaceAll("[^A-Z]", "").trim();
+		System.out.println(errorCodeStr);
+
+	}
+
+}

@@ -47,9 +47,8 @@ class CardDeck { // A deck of card
 	}
 
 	public void print() {
-		int count = 1;
 		for (Card card : deck)
-			System.out.println("" +  (count++) + " " + card); // print all cards
+			System.out.println(card); // print all cards
 	}
 
 	public void shuffle() {
@@ -63,7 +62,7 @@ public class CardTest {
 		CardDeck deck = new CardDeck();
 		deck.print();
 		deck.shuffle();
-		System.out.println("\nAfter Shuffle\n");
+		System.out.println("\n\n\n");
 		deck.print();
 	}
 }

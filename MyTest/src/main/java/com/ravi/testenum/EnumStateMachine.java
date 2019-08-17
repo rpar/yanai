@@ -1,6 +1,5 @@
 package com.ravi.testenum;
 
-
 public enum EnumStateMachine {
 	
 	NIGHT(null), EVENING(NIGHT), AFTERNOON(EVENING), MORNING(AFTERNOON) ;
