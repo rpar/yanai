@@ -15,11 +15,11 @@ public class TestVO {
 		this.name = name;
 	}
 
-	public List getAddress() {
+	public List<String> getAddress() {
 		return address;
 	}
 
-	public void setAddress(List address) {
+	public void setAddress(List<String> address) {
 		this.address = address;
 	}
 

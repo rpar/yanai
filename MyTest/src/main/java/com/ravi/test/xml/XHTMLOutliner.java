@@ -1,14 +1,5 @@
 package com.ravi.test.xml;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-
 public class XHTMLOutliner {
 
   public static void main(String[] args) {
@@ -18,7 +9,7 @@ public class XHTMLOutliner {
       return;
     }
     String input = args[0];
-
+/*
     try {
       URL u = new URL(input);
       InputStream in = u.openStream();
@@ -60,7 +51,7 @@ public class XHTMLOutliner {
     catch (IOException ex) {
       System.out.println("IOException while parsing " + input);
     }
-
+*/
   }
 
    /**
